@@ -1,0 +1,32 @@
+// ===============================================================
+func sum_to_n_a(n: number): number {
+	let sum = 0;
+  for (let i = 1; i <= n; i++) {
+      sum += i;
+  }
+  return sum;
+}
+// Complexity: 
+//   Time Complexity: n - Iterates through all numbers from 1 to n, performing n additions. 
+//   Space Complexity: 1 - Uses a single variable sum. 
+// Efficiency: This method is simple and efficient for small values of n, but it may be slow for very large values of n.
+
+// ===============================================================
+func sum_to_n_b(n: number): number {
+	if (n <= 0) return 0;
+  return n + sum_to_n_b(n - 1);
+}
+// Complexity: 
+//   Time Complexity: n - Calls itself n times, each reducing n by 1. 
+//   Space Complexity: n - Each recursive call adds a new frame to the call stack. 
+// Efficiency: Not ideal for large n due to stack overflow risk.
+
+// ===============================================================
+func sum_to_n_c(n: number): number {
+	return (n * (n + 1)) / 2;
+}
+// Complexity: 
+//   Time Complexity: 1 - Uses a direct mathematical formula. 
+//   Space Complexity: 1 - Uses only a few constant variables. 
+// Efficiency: This is the most efficient method as it computes the sum in constant time.
+
